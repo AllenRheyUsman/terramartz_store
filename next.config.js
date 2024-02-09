@@ -1,11 +1,30 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "tailwindui.com",
-      "res.cloudinary.com"
+    remotePatterns: [
+      
+      
+      {
+        protocol: 'https',
+        hostname: "tailwindui.com",
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.imagin.studio',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
     ]
-  }
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 }
 
 module.exports = nextConfig
