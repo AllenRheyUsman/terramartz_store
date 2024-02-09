@@ -1,8 +1,11 @@
 export interface Product {
+    desc: ReactNode;
+    
     id: string;
     category: Category;
     name: string;
     price: string;
+    compareAtPrice: string;
     isFeatured: boolean;
     size: Size;
     color: Color;

@@ -4,14 +4,22 @@ import Gallery from "@/components/gallery";
 import Info from "@/components/info";
 import ProductList from "@/components/product-list";
 import Container from "@/components/ui/container";
+ 
+ 
+
 interface ProductPageProps{
+   
     params:{
         productId: string;
+       
     }
 }
 
 const Productpage: React.FC<ProductPageProps> = async({
-    params
+    params,
+    
+    
+     
 }) => {
     const product =await getProduct(params.productId);
     const suggestedProducts = await getProducts({
@@ -29,8 +37,14 @@ const Productpage: React.FC<ProductPageProps> = async({
                    /> 
                 </div>
                 <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+                  
                  <Info data={product}/> 
+                      <div>
+                         
+                        {product.desc}
+                      </div>                   
                 </div>
+                
               </div>
               <hr className="my-10"/>
                 <ProductList

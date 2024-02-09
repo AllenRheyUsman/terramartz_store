@@ -10,6 +10,7 @@ import IconButton  from "@/components/ui/icon-button";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
 import { Product } from "@/types";
+import Button from "./button";
 
 interface ProductCard {
   data: Product
@@ -39,7 +40,7 @@ const ProductCard: React.FC<ProductCard> = ({
   };
   
   return ( 
-    <div onClick={handleClick} className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4">
+    <div onClick={handleClick} className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4 ">
       {/* Image & actions */}
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image 
@@ -66,11 +67,34 @@ const ProductCard: React.FC<ProductCard> = ({
         <p className="font-semibold text-lg">{data.name}</p>
         <p className="text-sm text-gray-500">{data.category?.name}</p>
       </div>
-      {/* Price & Reiew */}
+       
+        
+               
       <div className="flex items-center justify-between">
-        <Currency value={data?.price} />
+       
+        <div className="relative">
+          <p>
+            Before
+          </p>
+          <div className="absolute text-center text-red-500 w-full font-bold text-2xl">
+            X
+          </div>
+          <Currency value={data?.compareAtPrice} />
+          <p>
+            Now
+          </p>
+          <Currency value={data?.price} />
+        </div>
+        <div className="space-y-4">
+          <p className="  text-end">
+            Ratings
+          </p>
+           <Button className=" bg-red-500" onClick={onAddToCart}>
+              Add to Cart
+           </Button>
+        </div>
       </div>
-    </div>
+     </div>
   );
 }
 

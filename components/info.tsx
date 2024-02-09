@@ -21,6 +21,9 @@ const Info: React.FC<InfoProps> = ({
                 <Currency
                     value={data?.price}
                 />
+                <Currency
+                    value={data?.compareAtPrice}
+                />
               </p>
            </div>
            <hr className="my-4"/>
