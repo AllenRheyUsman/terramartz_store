@@ -7,3 +7,13 @@ body,
 :root{
   height:100%;
 }
+
+/* YourStylesheet.css or within your component's styles */
+.custom-border {
+  border-radius: 0.4rem  0  0 0.4rem;
+  
+}
+
+.group:hover .custom-border {
+  opacity: 1;
+}

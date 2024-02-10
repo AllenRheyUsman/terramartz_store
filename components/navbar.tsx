@@ -4,11 +4,17 @@ import MainNav from "./main-nav";
 import getCategories from "@/actions/get-categories";
 import NavbarActions from "./navbar-actions";
 import Image from "next/image";
+import NavPages from "./NavPages";
+
+
 
 export const revalidate =0;
 
 const Navbar = async() => {
     const categories =await getCategories();
+   
+    
+   
     
     return ( 
         <div className=" border-b">
@@ -21,8 +27,22 @@ const Navbar = async() => {
                    
                 </p>
                 </Link>
+                <div className="add an active status to the items on this div, that when selected it could be a change in the text color flex flex-1">
                 <MainNav data={categories}/>
+                 
+               
+                    <NavPages title={"The Brand"} href={"/Nopage"}/>
+                    <NavPages title={"Reviews"} href={"/Nopage"}/>
+                    <NavPages title={"Customer support"} href={"/Nopage"}/>
+                    <NavPages title={"Articles"} href={"/Nopage"}/>
+                    <NavPages title={"Affiliate"} href={"/Nopage"}/>
+               
+                
+                </div>
+               
+                
                 <NavbarActions/> 
+               
              </div>
             </Container>
         </div>
