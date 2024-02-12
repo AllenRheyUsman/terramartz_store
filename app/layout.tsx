@@ -1,36 +1,38 @@
 import { Urbanist } from 'next/font/google'
+import type { Metadata } from 'next'
 
-import ModalProvider from '@/providers/modal-provider'
-import ToastProvider from '@/providers/toast-provider'
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
+ 
 
 import './globals.css'
-import { Toaster } from 'sonner'
-import MainToaster from '@/providers/MainToaster'
+ 
+import ToasterContext from './context/ToasterContext'
+import AuthContext from './context/AuthContext'
 
 const font = Urbanist({ subsets: ['latin'] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Store',
   description: 'Store - The place for all your purchases.',
+  icons:{
+    icon:'/favicon.ico'
+  }
 }
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
+    <AuthContext>
     <html lang="en">
       <body className={font.className}>
-         <MainToaster/>
-        <ToastProvider />
-        <ModalProvider />
-        <Navbar />
+        
+       <ToasterContext/>
         {children}
-        <Footer />
+   
       </body>
     </html>
+    </AuthContext>
   )
 }

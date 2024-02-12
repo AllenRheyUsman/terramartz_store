@@ -1,3 +1,6 @@
+import { Conversation, Message, User } from "@prisma/client";
+import { MouseEventHandler, ReactNode } from "react";
+
 export interface Product {
     desc: ReactNode;
     
@@ -40,3 +43,26 @@ export interface Product {
     name: string;
     value: string;
   };
+
+
+
+  export type FullMessageType = Message & {
+    sender: User, 
+    seen: User[]
+  };
+  
+  export type FullConversationType = Conversation & { 
+    users: User[]; 
+    messages: FullMessageType[]
+  };
+  
+
+  export interface CustomButtonProps {
+    isDisabled?: boolean;
+    btnType?: "button" | "submit";
+    containerStyles?: string;
+    textStyles?: string;
+    title: string;
+    rightIcon?: string;
+    handleClick?: MouseEventHandler<HTMLButtonElement>;
+  }
