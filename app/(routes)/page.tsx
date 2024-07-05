@@ -11,7 +11,7 @@ const HomePage = async () => {
   const products = await getProducts({ isFeatured: true });
     // "please use the copy id dropdown ( copyid , update and delete )on the billboard name itself"
 
-  const billboard = await getBillboard("1283f817-1f83-40fb-b3e6-df54ce74b557");
+  const billboard = await getBillboard("c994f053-e130-4d84-9e84-ec2713a0bb0b");
 
   return (
     <Container>
