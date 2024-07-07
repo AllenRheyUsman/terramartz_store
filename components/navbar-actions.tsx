@@ -50,15 +50,15 @@ const NavbarActions: React.FC<NavbarActionsProps> = ({ currentUser }) => {
 
   // Return the JSX structure of the NavbarActions component
   return (
-    <div className="ml-auto flex items-center gap-x-4">
+    <div className="ml-auto flex items-center gap-x-4 relative">
       {/* Render the cart button */}
-      <Link href={"/cart"}>
+      <Link href={"/cart"} className="">
         <Button
           onClick={() => {}}
-          className="flex items-center rounded-full bg-black px-4 py-2"
+          className="flex items-center bg-lime-600  rounded-full p-3 border-1 border-opacity-10 border-green-900  hover:bg-lime-400 hover:border-opacity-70 ring-0 hover:ring-1"
         >
           <ShoppingBag size={20} color="white" />
-          <span className="ml-2 text-sm font-medium text-white">
+          <span className="ml-2 text-md  font-medium text-white absolute translate-x-3 -translate-y-4 ">
             {cart.items.length}
           </span>
         </Button>
@@ -66,7 +66,7 @@ const NavbarActions: React.FC<NavbarActionsProps> = ({ currentUser }) => {
 
       {/* Conditionally render the "Login" link */}
       {!session ? (
-        <Link href={'/login'}>
+        <Link href={'/login'} className="bg-lime-400 text-green-950 px-5 py-2 rounded-full tracking-wider border-2 hover:border-opacity-0 border-opacity-30 border-green-950 hover:text-white hover:bg-lime-600 ring-0 hover:ring-1">
           Login
         </Link>
       ) : null}
@@ -80,7 +80,7 @@ const NavbarActions: React.FC<NavbarActionsProps> = ({ currentUser }) => {
               <DropdownMenuTrigger asChild>
                 <button className="relative p-2 rounded-lg outline-none group">
                   <Image
-                    src={session.user?.image || '/w.png'}
+                    src={session.user?.image || '/images/logo.png'}
                     width={50}
                     height={20}
                     alt='user-image'

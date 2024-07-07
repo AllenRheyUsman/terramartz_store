@@ -22,24 +22,30 @@ const Navbar = async () => {
   const currentUser = await getCurrentUser()
 
   return (
-    <div className=" border-b">
+    <div className="  bg-lime-400 p-5">
       <Container>
-        <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
-          <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
+        <div className="  px-4 sm:px-6 lg:px-8 flex h-16 items-center ">
+          <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2 relative flex-col">
             <p className="font-bold text-xl">
-              <Image src={"/w.png"} width={50} height={50} alt="logo" className="rounded-full mx-auto px-auto" />
+              <Image src={"/images/logo.png"} width={50} height={50} alt="logo" className="rounded-full mx-auto px-auto" />
+            </p>
+            <p className="font-semibold tracking-wide">
+              TERRAMARTZ
             </p>
           </Link>
-          <div className="flex flex-1">
+          <div className="flex flex-1   justify-end pt-10">
            
             <MainNav data={categories} />
-            <NavPages title={"The Brand"} href={"/Nopage"} />
             <NavPages title={"Reviews"} href={"/Nopage"} />
+             
             <NavPages title={"Customer support"} href={"/Nopage"} />
             <NavPages title={"Articles"} href={"/Nopage"} />
             <NavPages title={"Affiliate"} href={"/Nopage"} />
           </div>
-          <NavbarActions currentUser={currentUser!} />
+
+         <div className="  justify-end pt-10">
+         <NavbarActions currentUser={currentUser!} />
+         </div>
             
             
 

@@ -1,4 +1,4 @@
-import { Urbanist } from 'next/font/google'
+import { Inter, Urbanist } from 'next/font/google'
 import type { Metadata } from 'next'
 
  
@@ -8,7 +8,7 @@ import './globals.css'
 import ToasterContext from './context/ToasterContext'
 import AuthContext from './context/AuthContext'
 
-const font = Urbanist({ subsets: ['latin'] })
+const font = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Store',

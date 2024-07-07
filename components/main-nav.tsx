@@ -35,7 +35,7 @@ const MainNav: React.FC<MainNavProps> = ({
     }
 
     return ( 
-        <nav className="mx-6 flex items-center space-x-4 lg:space-x-6 hover:text-purple-500 font-bold">
+        <nav className="mx-6 flex items-center space-x-4 lg:space-x-6 hover:text-green-950 font-medium opacity-70 hover:opacity-100">
 
                 <div>
                    
@@ -43,21 +43,21 @@ const MainNav: React.FC<MainNavProps> = ({
 
                 <DropdownMenu>
       <DropdownMenuTrigger asChild>
-      <button className="relative p-2 rounded-lg outline-none group">
+      <button className="relative p-2 rounded-lg outline-none group tracking-wider">
       Categories
-      <span className="absolute bottom-0 left-0 right-0 h-1 bg-purple-500 opacity-0 group-hover:opacity-100 transition-opacity custom-border"></span>
+      <span className="absolute bottom-0 left-0 right-0 h-[.1rem] bg-green-950 opacity-0 group-hover:opacity-100 transition-opacity custom-border rounded-md"></span>
     </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="bg-neutral-100 rounded-[.35rem]">
       <DropdownMenuItem>
-        <ul className="gap-8 flex  ">
+        <ul className="gap-8 flex flex-col ">
           {routes.map((route) => (
             <li key={route.href}>
               <Link
                 href={route.href}
                 className={cn(
-                  "text-lg font-medium transition-colors hover:text-white hover:bg-purple-300 mx-auto p-2 rounded-[.375rem] ",
-                  route.active ? "text-black bg-purple-300" : "text-purple-300", 
+                  "text-lg font-medium transition-colors hover:text-white hover:bg-green-500 mx-auto p-2 rounded-[.375rem] duration-300 ease-in-out ",
+                  route.active ? "text-white bg-green-500" : "text-green-500", 
                 )}
               >
                 {route.label}

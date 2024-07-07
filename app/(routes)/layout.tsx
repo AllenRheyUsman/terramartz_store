@@ -8,13 +8,17 @@ import MainToaster from '@/providers/MainToaster'
 import AuthContext from '../context/AuthContext'
  
 import getCurrentUser from '../actions/getCurrentUser'
+import Billboard from '@/components/billboard'
+import getBillboard from '@/actions/get-billboard'
+import Container from "@/components/ui/container";
 
 export default async function RootLayout({
   children,
 }:Readonly<{
   children: React.ReactNode;
 }>) {
-   
+  
+    
   return (
    
       <div>
@@ -23,8 +27,16 @@ export default async function RootLayout({
         {/* <ModalProvider /> */}
          
         <Navbar />
-        <main>
-        {children}
+       
+       
+        
+       
+        <main className=' '>
+         
+       
+          {children}.
+          
+      
         </main>
         <Footer />
       </div>
